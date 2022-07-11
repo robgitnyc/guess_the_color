@@ -1,0 +1,42 @@
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: fit-content;
+}
+
+.box {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+.colorToGuess {
+    width: fit-content;
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
+
+.display2 {
+    height: 4rem;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 2.5rem;
+}
+
+.lose {
+    color: red;
+}
+
+.win {
+    color: green;
+    font-size: 3rem;
+}
+
+.wrapper2 {
+    display: flex;
+    justify-content: space-between;
+}
