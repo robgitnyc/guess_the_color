@@ -10,8 +10,11 @@ const display2 = document.querySelector(".display2");
 const playAgain = document.querySelector(".playAgain")
 const displayLives = document.querySelector(".lives")
 const displayScore = document.querySelector(".score")
+const highest = document.querySelector(".highest")
+
 let lives;
 let score = 0;
+let highestScore = 0;
 
 const newButton =document.createElement("button");
 newButton.setAttribute("type", "button"); 
@@ -21,10 +24,11 @@ newButton.textContent = "Play Again"
 
 function colorBox() {
     display2.innerText = "";
-    display2.innerText = "";
     lives = 4;
     displayScore.textContent = `your score: ${score}`;
     displayLives.textContent = `lives left: ${lives}`;
+    let storedHighest = localStorage.getItem('highestScore');
+    highest.textContent = `highest score: ${storedHighest}`;
 
 
     const boxes = document.querySelectorAll(".box");  
@@ -60,6 +64,7 @@ function colorBox() {
 
             display2.classList.add("lose");
             displayScore.textContent = `your score: ${score}`;
+            
             score = 0;
 
             for (const box of boxes) {
@@ -99,26 +104,13 @@ function colorBox() {
       
     }
 
+    if (score > highestScore) {
+        highestScore = score;
+    }
 
-/*
-    let color1 =  randomColor();
-    let color2 =  randomColor();
-    let color3 =  randomColor();
-    let color4 =  randomColor();
-    let color5 =  randomColor();
-    let color6 =  randomColor();
+    localStorage.setItem('highestScore',highestScore);
 
-    box1.style.backgroundColor = color1;
-    box2.style.backgroundColor = color2;
-    box3.style.backgroundColor = color3;
-    box4.style.backgroundColor = color4;
-    box5.style.backgroundColor = color5;
-    box
 
-    
-
-    colorToGuess.textContent = color6;
-    */
 
 }
 
