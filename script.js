@@ -28,7 +28,7 @@ if (localStorage.getItem("maxScore")===null) {
 function colorBox() {
     let maxScoreGlobal = localStorage.getItem("maxScore");
     highest.textContent = "HIGHEST SCORE: "+ maxScoreGlobal;
-    let lives = 6;
+    let lives = 3;
     colorToGuess.style.color = "white";
     
 
