@@ -13,9 +13,24 @@ const displayScore = document.querySelector(".score")
 const highest = document.querySelector(".highest")
 const test = document.querySelector(".test");
 const buttonTest = document.querySelector(".buttonTest")
+const h1 = document.querySelector("h1");
 
+function rainbowTitle(){
+    h1.textContent = "";
+let title = "Guess the Color";
 
-const newButton =document.createElement("button");
+for (const letter of title) {
+    h1.innerHTML += `<span>${letter}</span>`;
+
+}
+
+const spans = document.querySelectorAll("span")
+console.log(spans);
+for (const span of spans) {
+    span.style.color = randomColor();
+}
+}
+const newButton = document.createElement("button");
 newButton.setAttribute("type", "button"); 
 newButton.setAttribute("class", "newButton"); 
 newButton.textContent = "Play Again";
@@ -26,10 +41,12 @@ if (localStorage.getItem("maxScore")===null) {
 }
 
 function colorBox() {
+    rainbowTitle();
+
     let maxScoreGlobal = localStorage.getItem("maxScore");
     highest.textContent = "HIGHEST SCORE: "+ maxScoreGlobal;
     let lives = 3;
-    colorToGuess.style.color = "white";
+    colorToGuess.style.color = "lightgray";
     
 
 
@@ -76,9 +93,13 @@ function colorBox() {
         displayLives.textContent = `lives left: ${lives}`;
 
         if (lives === 0) { // you lose
-            display2.innerText = "You lost. ";
+            display2.innerText = "You lose";
             display2.appendChild(newButton);
-            display2.style.color = "white";
+            display2.style.color = "black";
+            setTimeout(()=>{
+                display2.style.color = mysteryColor;
+                colorToGuess.style.color = mysteryColor;
+            }, 100)
 
      //       display2.classList.add("lose");
             displayScore.textContent = `your score: ${score}`;

@@ -1,6 +1,9 @@
+
+
 body {
     background-color: black;
     color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .wrapper {
@@ -12,13 +15,14 @@ body {
 }
 
 .box {
-    border: 1px solid black;
+    border-radius: 10px;
     height: 200px;
     width: 100%;
 }
 .colorToGuess {
     width: fit-content;
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 0 auto;
 }
 
@@ -35,7 +39,6 @@ body {
 }
 
 .win {
-    color: green;
     font-size: 3rem;
 }
 
@@ -51,8 +54,7 @@ body {
     width: 50%;
 }
 .header {
-    display: flex;
-    justify-content: space-between;
+ 
 }
 
 .flashResult {
@@ -62,3 +64,30 @@ body {
 .flashBorder {
     border: 2px solid white;
 }
+
+@media (max-width: 500px) {
+    
+    .centerer {
+        width: 100%;
+    }
+  }
+
+  .info {
+    color: lightgray;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .newButton {
+    margin-left: 2rem;
+  }
+  h1 {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 3rem;
+  }
+
+  
