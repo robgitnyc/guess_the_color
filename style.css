@@ -53,9 +53,7 @@ body {
     margin: 0 auto;
     width: 50%;
 }
-.header {
- 
-}
+
 
 .flashResult {
     color: yellow;
@@ -65,7 +63,7 @@ body {
     border: 2px solid white;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 680px) {
     
     .centerer {
         width: 100%;
